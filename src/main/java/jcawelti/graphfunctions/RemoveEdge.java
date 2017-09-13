@@ -7,6 +7,12 @@ import jcawelti.graphlibrary.GraphFromFile;
 import jcawelti.graphlibrary.Vertex;
 
 import java.util.Scanner;
+//********************************************************************
+//  After removing an edge, must check the 2 vertices that made up that edge
+//  to see if either still in use by other edges.  If they aren't, they
+//  are 'orphaned' and must be removed from the vertices graph structure.
+//  This is done in the Graph class.
+//********************************************************************
 
 public class RemoveEdge {
 
@@ -14,7 +20,6 @@ public class RemoveEdge {
         Graph graph = new GraphFromFile().createGraphFromFile();
         String first, second;
         Vertex v1, v2;
-        int weight;
 
         System.out.println("Original Graph");
         System.out.println();
