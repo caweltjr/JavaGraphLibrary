@@ -5,6 +5,7 @@ Requirements
 Write a small graph library to create (add edges and vertices), manipulate (add/remove edges and
 vertices) and query (retrieve edges for vertex, determine connectivity) a graph data structure. Include
 automated tests for your code.
+
 Some or all of the following features can also be implemented. If you choose not to, be prepared to
 describe how you would do so during the interview.
 - Allow edges to have a direction.
@@ -17,13 +18,15 @@ describe how you would do so during the interview.
 Implementation
 
 To meet these requirements, a java maven command-line project that creates a weighted, connected graph data structure. The graph stucture is created
-using hashmaps for the edges and the vertices. 
+by reading in a .csv file in the form of edges defined as 'vertex 1, vertex 2, weight'. For example, one
+edge would be 'A,B,300' which represents an edge with a weighted value of 300. The graph structure is 
+composed of 2 hashmaps, one for the edges and one for the vertices. 
 
 The following graph functions are implemented:
 
     1. create (add edges and vertices) the graph from data in a csv file
     2. add/remove edges 
-    3. add/remove vertices
+    3. remove vertices
     4. retrieve edges for vertex
     5. given a vertex, determine it's connectivity to edges
     
