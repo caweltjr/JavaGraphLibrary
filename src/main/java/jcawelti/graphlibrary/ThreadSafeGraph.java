@@ -5,17 +5,17 @@ import jcawelti.exception.VertexNotFoundException;
 
 import java.util.HashMap;
 
-public class Graph implements GraphInterface, java.io.Serializable{
+public class ThreadSafeGraph implements GraphInterface, java.io.Serializable{
     private HashMap<String, Vertex> vertices;
     private HashMap<Integer, Edge> edges;
     private ShortestPath chosenShortestPath;
 
-    public Graph() {
+    public ThreadSafeGraph() {
         this.vertices = new HashMap<>();
         this.edges = new HashMap<>();
     }
 
-    public boolean addEdge(String vertexLabel1, String vertexLabel2, int weight)throws EdgeException {
+    public synchronized boolean addEdge(String vertexLabel1, String vertexLabel2, int weight)throws EdgeException {
         // computeIfAbsent will only create a new vertex if there is none already in the vertices hashmap
         // otherwise use the already connected vertex and update it's new neighbor in addEdge
         Vertex one = vertices.computeIfAbsent(vertexLabel1, Vertex::new);
@@ -45,7 +45,7 @@ public class Graph implements GraphInterface, java.io.Serializable{
 
         return true;
     }
-    public void removeEdge(Vertex one, Vertex two) throws EdgeException {
+    public synchronized void removeEdge(Vertex one, Vertex two) throws EdgeException {
         if (one.equals(two)) {
             throw new EdgeException("Vertices cannot be the same in this graph");
         }
@@ -74,7 +74,7 @@ public class Graph implements GraphInterface, java.io.Serializable{
             }
         }
     }
-    public boolean addVertexIfAbsent(Vertex vertex) {
+    public synchronized boolean addVertexIfAbsent(Vertex vertex) {
         Vertex current = this.vertices.get(vertex.getLabel());
         if (current == null) {
             vertices.put(vertex.getLabel(), vertex);
@@ -82,35 +82,35 @@ public class Graph implements GraphInterface, java.io.Serializable{
         }
         return false;
     }
-    public void displayGraph() {
+    public synchronized void displayGraph() {
         for (Edge e : edges.values()) {
             System.out.println(e);
         }
     }
-    public Vertex getVertex(String label) throws VertexNotFoundException {
+    public synchronized Vertex getVertex(String label) throws VertexNotFoundException {
         if (vertices.containsKey(label)) {
             return vertices.get(label);
         }
         throw new VertexNotFoundException("'" + label + "' vertex not found in graph");
     }
-    public ShortestPath getChosenShortestPath() {
+    public synchronized ShortestPath getChosenShortestPath() {
 
         return chosenShortestPath;
     }
-    public void setChosenShortestPath(ShortestPath chosenShortestPath) {
+    public synchronized void setChosenShortestPath(ShortestPath chosenShortestPath) {
 
         this.chosenShortestPath = chosenShortestPath;
     }
-    public void resetGraph() {
+    public synchronized void resetGraph() {
         vertices.values().forEach(Vertex::reset);
         chosenShortestPath = null;
     }
-    public HashMap<Integer, Edge> getEdges() {
+    public synchronized HashMap<Integer, Edge> getEdges() {
 
         return edges;
     }
 
-    public HashMap<String, Vertex> getVertices() {
+    public synchronized HashMap<String, Vertex> getVertices() {
 
         return vertices;
     }
