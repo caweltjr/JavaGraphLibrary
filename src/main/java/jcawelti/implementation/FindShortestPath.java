@@ -5,6 +5,11 @@ import jcawelti.exception.VertexNotFoundException;
 import jcawelti.graphlibrary.*;
 
 import java.util.Scanner;
+//********************************************************************
+//  This is the implementation of the Dijkstra shortest-path algorithm
+//  over a connected graph, using the weights of each edge to calculate
+//  the shortest path.
+//********************************************************************
 
 public class FindShortestPath {
 

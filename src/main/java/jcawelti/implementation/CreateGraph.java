@@ -2,7 +2,9 @@ package jcawelti.implementation;
 
 import jcawelti.graphlibrary.Graph;
 import jcawelti.graphlibrary.GraphFromFile;
-
+//********************************************************************
+//  This is the implementation of determining creating the graph.
+//********************************************************************
 public class CreateGraph {
 
     public static void main(String[] args) {

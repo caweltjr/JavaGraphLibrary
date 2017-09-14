@@ -5,7 +5,9 @@ import jcawelti.graphlibrary.Graph;
 import jcawelti.graphlibrary.GraphFromFile;
 
 import java.util.Scanner;
-
+//********************************************************************
+//  This is the implementation of adding a new edge to the graph.
+//********************************************************************
 public class AddEdge {
 
     public static void main(String[] args) {

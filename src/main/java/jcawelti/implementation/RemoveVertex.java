@@ -9,6 +9,7 @@ import jcawelti.graphlibrary.Vertex;
 import java.util.ArrayList;
 import java.util.Scanner;
 //********************************************************************
+//  This is the implementation of removing a vertex from the graph.
 //  Removing a vertex involves first removing all the edges of the graph
 //  associated with that vertex.  After that, must check to see if there
 //  are any 'orphaned' vertices, vertices left after the edge they were

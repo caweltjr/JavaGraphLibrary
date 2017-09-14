@@ -5,7 +5,10 @@ import jcawelti.graphlibrary.Graph;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-
+//********************************************************************
+//  This is the implementation of de-serializing the graph from a file on disk
+//  by making use of the java.io.Serialization mechanism.
+//********************************************************************
 public class DeSerializeGraph {
 
     public static void main(String[] args) {

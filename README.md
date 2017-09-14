@@ -4,6 +4,7 @@ A java maven command-line project that creates a weighted, connected graph data 
 using hashmaps for the edges and the vertices. 
 
 The following graph functions are implemented:
+
     1. create (add edges and vertices) the graph from data in a csv file
     2. add/remove edges 
     3. add/remove vertices

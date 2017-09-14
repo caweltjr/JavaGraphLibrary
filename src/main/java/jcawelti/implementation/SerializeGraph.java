@@ -6,7 +6,10 @@ import jcawelti.graphlibrary.GraphFromFile;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-
+//********************************************************************
+//  This is the implementation of serializing the graph to a file on disk
+//  by making use of the java.io.Serialization mechanism.
+//********************************************************************
 public class SerializeGraph {
 
     public static void main(String[] args) {

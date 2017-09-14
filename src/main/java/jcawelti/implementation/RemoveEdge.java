@@ -8,6 +8,7 @@ import jcawelti.graphlibrary.Vertex;
 
 import java.util.Scanner;
 //********************************************************************
+//  This is the implementation of removing an edge from the graph.
 //  After removing an edge, must check the 2 vertices that made up that edge
 //  to see if either still in use by other edges.  If they aren't, they
 //  are 'orphaned' and must be removed from the vertices graph structure.

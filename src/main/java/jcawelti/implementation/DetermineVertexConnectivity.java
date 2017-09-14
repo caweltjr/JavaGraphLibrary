@@ -8,7 +8,10 @@ import jcawelti.graphlibrary.Vertex;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//********************************************************************
+//  This is the implementation of determining the connectivity of a vertex
+//  of the graph.
+//********************************************************************
 public class DetermineVertexConnectivity {
 
     public static void main(String[] args) {
