@@ -13,7 +13,7 @@ The following graph functions are implemented:
 A set of starter Junit tests are included.   
 
 The edges have labels and a positive integer weight is assigned to each edge.
-The graph to be stored on disk or transmitted across a network through the java.io.Serializeable
+The graph can be stored on disk or transmitted across a network through the java.io.Serializeable
     mechanism.
 The Dijkstra shortest-path algorithm has been implemented to find the shortest path between 
     2 vertices using weighted edges.
