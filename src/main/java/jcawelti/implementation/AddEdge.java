@@ -1,4 +1,4 @@
-package jcawelti.graphfunctions;
+package jcawelti.implementation;
 
 import jcawelti.exception.EdgeException;
 import jcawelti.graphlibrary.Graph;

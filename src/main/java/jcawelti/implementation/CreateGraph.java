@@ -1,4 +1,4 @@
-package jcawelti.graphfunctions;
+package jcawelti.implementation;
 
 import jcawelti.graphlibrary.Graph;
 import jcawelti.graphlibrary.GraphFromFile;
