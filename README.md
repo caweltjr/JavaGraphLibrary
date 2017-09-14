@@ -34,5 +34,5 @@ The graph can be stored on disk or transmitted across a network through the java
     mechanism.
 The Dijkstra shortest-path algorithm has been implemented to find the shortest path between 
     2 vertices using weighted edges.
-A separate wrapper class called ThreadSafeGraph with synchronized method was created to
+A separate wrapper class called ThreadSafeGraph with synchronized methods was created to
  meet the requirement that it could be manipulated and queried safely from multiple threads.
