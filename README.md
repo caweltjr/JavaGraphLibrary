@@ -29,13 +29,11 @@ The following graph functions are implemented:
     3. remove vertices
     4. retrieve edges for vertex
     5. given a vertex, determine it's connectivity to edges
+    6. edges have labels and have weights
+    7. the Dijkstra shortest path algorithm has been implemented to find the shortest path between 2 vertices
+    8. The graph can be stored on disk or transmitted across a network through the java.io.Serializeable
+           mechanism
+    9. A separate wrapper class called ThreadSafeGraph with synchronized methods was created to
+        meet the requirement that it could be manipulated and queried safely from multiple threads.
+    10. A set of starter Junit tests are included. 
     
-A set of starter Junit tests are included.   
-
-The edges have labels and a positive integer weight is assigned to each edge.
-The graph can be stored on disk or transmitted across a network through the java.io.Serializeable
-    mechanism.
-The Dijkstra shortest-path algorithm has been implemented to find the shortest path between 
-    2 vertices using weighted edges.
-A separate wrapper class called ThreadSafeGraph with synchronized methods was created to
- meet the requirement that it could be manipulated and queried safely from multiple threads.
