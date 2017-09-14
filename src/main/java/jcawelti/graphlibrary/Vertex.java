@@ -3,7 +3,7 @@ package jcawelti.graphlibrary;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Vertex implements Iterable<Edge>{
+public class Vertex implements Iterable<Edge>, java.io.Serializable{
     private ArrayList<Edge> neighborhood;
     private String label;
     private Integer distance;

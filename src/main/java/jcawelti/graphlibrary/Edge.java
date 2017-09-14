@@ -1,6 +1,6 @@
 package jcawelti.graphlibrary;
 
-public class Edge {
+public class Edge implements java.io.Serializable{
     private Vertex one;
     private Vertex two;
     private Integer weight;

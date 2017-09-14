@@ -5,7 +5,7 @@ import jcawelti.exception.VertexNotFoundException;
 
 import java.util.HashMap;
 
-public class Graph implements GraphInterface{
+public class Graph implements GraphInterface, java.io.Serializable{
     private HashMap<String, Vertex> vertices;
     private HashMap<Integer, Edge> edges;
     private ShortestPath chosenShortestPath;
