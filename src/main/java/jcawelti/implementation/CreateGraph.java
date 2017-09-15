@@ -8,7 +8,7 @@ import jcawelti.graphlibrary.GraphFromFile;
 public class CreateGraph {
 
     public static void main(String[] args) {
-        Graph graph = null;
+        Graph graph;
 
         System.out.println("Creating Graph From a File");
         System.out.println();

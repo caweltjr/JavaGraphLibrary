@@ -18,7 +18,7 @@ public class FindShortestPath {
         String first, second;
         Vertex from;
         Vertex to;
-        ShortestPath sp = null;
+        ShortestPath sp;
 
         System.out.println("Original Graph");
         System.out.println();

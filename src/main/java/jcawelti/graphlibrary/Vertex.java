@@ -48,51 +48,51 @@ public class Vertex implements Iterable<Edge>, java.io.Serializable{
         return new ArrayList<>(this.neighborhood);
     }
 
-    public Integer getDistance() {
+    Integer getDistance() {
         return distance;
     }
 
-    public void setDistance(Integer distance) {
+    void setDistance(Integer distance) {
         this.distance = distance;
     }
 
-    public boolean containsNeighbor(Edge e) {
+    boolean containsNeighbor(Edge e) {
         return this.neighborhood.contains(e);
     }
 
-    public void addNeighbor(Edge e){
+    void addNeighbor(Edge e){
         if (!neighborhood.contains(e)){
             this.neighborhood.add(e);
         }
     }
 
-    public void setAsSource(){
+    void setAsSource(){
         visited = true;
         distance = 0;
         shortestPath = new ShortestPath(this);
     }
 
-    public ShortestPath getShortestPath() {
+    ShortestPath getShortestPath() {
         return shortestPath;
     }
 
-    public void setShortestPath(ShortestPath shortestPath) {
+    void setShortestPath(ShortestPath shortestPath) {
         shortestPath.setWeight(this.distance);
         shortestPath.setDestination(this);
         this.shortestPath = shortestPath;
     }
 
-    public void reset(){
+    void reset(){
         this.distance = Integer.MAX_VALUE;
         this.visited = false;
         this.shortestPath = null;
     }
 
-    public Boolean getVisited() {
+    Boolean getVisited() {
         return visited;
     }
 
-    public void visit(){
+    void visit(){
         visited = true;
     }
 

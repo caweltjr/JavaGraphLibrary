@@ -7,6 +7,7 @@ import jcawelti.graphlibrary.GraphFromFile;
 import jcawelti.graphlibrary.Vertex;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 //********************************************************************
 //  This is the implementation of removing a vertex from the graph.
@@ -25,7 +26,7 @@ public class RemoveVertex {
         String first;
         Vertex v1;
         ArrayList<Edge> connectedEdges;
-        ArrayList<Vertex> orphanedVertices;
+        HashMap<String, Vertex> vertices;
 
         System.out.println("Original Graph");
         System.out.println();
@@ -33,7 +34,7 @@ public class RemoveVertex {
         Scanner kb = new Scanner(System.in);
         System.out.println("Removing an Existing Vertex");
         System.out.println();
-        System.out.print("Enter vertex to remove name: ");
+        System.out.print("Enter Vertex to Remove Name: ");
         first = kb.nextLine();
         try {
             v1 = graph.getVertex(first);
@@ -49,15 +50,22 @@ public class RemoveVertex {
             System.out.println("Removing Edge: " + e.toString());
             graph.getEdges().remove(e.hashCode(), e); // remove all the edges associated with this vertex
             if(e.getOne().getNeighbors().size() == 0){ // vertex of this edge has no neighbors;
-                graph.getVertices().remove(e.getOne().hashCode(), e.getOne()); // remove from vertices structure
+                graph.getVertices().remove(e.getOne().getLabel(), e.getOne()); // remove from vertices structure
             }
             if(e.getTwo().getNeighbors().size() == 0){ // vertex of this edge has no neighbors;
-                graph.getVertices().remove(e.getTwo().hashCode(), e.getTwo()); // remove from vertices structure
+                graph.getVertices().remove(e.getTwo().getLabel(), e.getTwo()); // remove from vertices structure
             }
         }
-        graph.getVertices().remove(v1.hashCode(),v1); // remove the selected vertex from the vertices structure
+        graph.removeVertex(v1); // remove the selected vertex from the vertices structure
+        vertices = graph.getVertices();
         System.out.println("New Graph with Vertex " + v1.getLabel() + " Removed");
         System.out.println();
         graph.displayGraph();
+        System.out.println();
+        System.out.println("Remaining Vertices");
+        System.out.println();
+        for (Vertex v : vertices.values()) {
+            System.out.println(v.getLabel());
+        }
     }
 }

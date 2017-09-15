@@ -17,9 +17,10 @@ describe how you would do so during the interview.
 
 Implementation
 
-To meet these requirements, I developed this project, a maven command-line project that creates a weighted, connected graph data structure. The graph stucture is created
+To meet these requirements, I developed this project, a java 8 maven command-line project that creates a weighted, connected graph data structure. The graph stucture is created
 by reading in a .csv file in the form of edges defined as 'vertex 1, vertex 2, weight'. For example, one
-edge would be 'A,B,300' which represents an edge with a weighted value of 300. The graph structure is 
+edge would be 'A,B,300' which represents an edge with a weighted value of 300. Two csv files are included. The
+advanced.csv file was used in this project.  An image of this graph is included as graph.png. The graph data structure is 
 composed of 2 hashmaps, one for the edges and one for the vertices. 
 
 The following graph functions are implemented:

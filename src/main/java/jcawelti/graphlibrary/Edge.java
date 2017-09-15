@@ -12,7 +12,7 @@ public class Edge implements java.io.Serializable{
         this.weight = weight;
     }
 
-    public Vertex getNeighbor(Vertex current) {
+    Vertex getNeighbor(Vertex current) {
         if (!(current.equals(one) || current.equals(two))) {
             return null;
         }
@@ -27,16 +27,16 @@ public class Edge implements java.io.Serializable{
         return two;
     }
 
-    public int getWeight() {
+    int getWeight() {
         return this.weight;
     }
 
     public String toString() {
-        return connectionToString("--->") + ", " + weight;
+        return connectionToString() + ", " + weight;
     }
 
-    public String connectionToString(String delimiter) {
-        return one.getLabel() + delimiter + two.getLabel();
+    private String connectionToString() {
+        return one.getLabel() + "--->" + two.getLabel();
     }
 
     public boolean equals(Object other) {
@@ -52,7 +52,4 @@ public class Edge implements java.io.Serializable{
         return (one.getLabel() + two.getLabel()).hashCode();
     }
 
-    public String toDot() {
-        return one + "--" + two + "[ label=\"" + this.weight + "\"];";
-    }
 }

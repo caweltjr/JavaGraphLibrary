@@ -70,7 +70,7 @@ public class Graph implements GraphInterface, java.io.Serializable{
                 }
             }
             if(!vertexIsInUse){
-                vertices.remove(v.hashCode(),v);
+                vertices.remove(v.getLabel(),v);
             }
         }
     }
@@ -81,6 +81,9 @@ public class Graph implements GraphInterface, java.io.Serializable{
             return true;
         }
         return false;
+    }
+    public void removeVertex(Vertex vertex){
+        vertices.remove(vertex.getLabel(), vertex);
     }
     public void displayGraph() {
         for (Edge e : edges.values()) {

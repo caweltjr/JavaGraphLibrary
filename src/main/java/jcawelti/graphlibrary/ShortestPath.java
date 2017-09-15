@@ -8,21 +8,21 @@ public class ShortestPath extends AbstractCollection<Edge> {
     private Vertex destination;
     private Integer weight;
 
-    public ShortestPath(Vertex startingVertex) {
+    ShortestPath(Vertex startingVertex) {
         pathList = new LinkedList<>();
         source = startingVertex;
         destination = startingVertex;
         weight = 0;
     }
 
-    public ShortestPath(ShortestPath other) {
+    ShortestPath(ShortestPath other) {
         this.pathList = new LinkedList<>(other.pathList);
         this.source = other.source;
         this.destination = other.destination;
         this.weight = other.weight;
     }
 
-    public void addEdge(Edge edge) {
+    void addEdge(Edge edge) {
         pathList.add(edge);
     }
 
@@ -38,12 +38,12 @@ public class ShortestPath extends AbstractCollection<Edge> {
 
     @Override
     public String toString() {
-        return "Shortest Path from " + source + " to " + destination + ":\n" + pathListToString(" --> ") +
+        return "Shortest Path from " + source + " to " + destination + ":\n" + pathListToString() +
                 "\nTotal Cost: " + weight;
     }
 
-    public String pathListToString(String delimiter) {
-        StringJoiner sj = new StringJoiner(delimiter);
+    private String pathListToString() {
+        StringJoiner sj = new StringJoiner(" --> ");
         Vertex current = source;
         sj.add(source.getLabel());
         for (Edge e : pathList) {
@@ -54,11 +54,11 @@ public class ShortestPath extends AbstractCollection<Edge> {
         return sj.toString();
     }
 
-    public void setWeight(Integer distance) {
+    void setWeight(Integer distance) {
         this.weight = distance;
     }
 
-    public void setDestination(Vertex destination) {
+    void setDestination(Vertex destination) {
         this.destination = destination;
     }
 }
