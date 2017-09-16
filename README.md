@@ -28,7 +28,7 @@ The following graph functions are implemented:
     1. create (add edges and vertices) the graph from data in a csv file
     2. add/remove single edges 
     3. add/remove single vertices
-    4. given a vertex, determine it's connectivity to edges
+    4. given a vertex, retrieve it's edges and determine it's connectivity to edges
     5. edges have labels and have weights
     6. the Dijkstra shortest path algorithm has been implemented to find the shortest path between 2 vertices
     7. The graph can be stored on disk or transmitted across a network through the java.io.Serializeable
