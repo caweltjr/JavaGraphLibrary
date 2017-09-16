@@ -26,15 +26,14 @@ composed of 2 hashmaps, one for the edges and one for the vertices.
 The following graph functions are implemented:
 
     1. create (add edges and vertices) the graph from data in a csv file
-    2. add/remove edges 
-    3. remove vertices
-    4. retrieve edges for vertex
-    5. given a vertex, determine it's connectivity to edges
-    6. edges have labels and have weights
-    7. the Dijkstra shortest path algorithm has been implemented to find the shortest path between 2 vertices
-    8. The graph can be stored on disk or transmitted across a network through the java.io.Serializeable
+    2. add/remove single edges 
+    3. add/remove single vertices
+    4. given a vertex, determine it's connectivity to edges
+    5. edges have labels and have weights
+    6. the Dijkstra shortest path algorithm has been implemented to find the shortest path between 2 vertices
+    7. The graph can be stored on disk or transmitted across a network through the java.io.Serializeable
            mechanism
-    9. A separate wrapper class called ThreadSafeGraph with synchronized methods was created to
+    8. A separate wrapper class called ThreadSafeGraph with synchronized methods was created to
         meet the requirement that it could be manipulated and queried safely from multiple threads.
-    10. A set of starter Junit tests are included. 
+    9. A set of starter Junit tests are included. 
     
